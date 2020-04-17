@@ -27,7 +27,7 @@ const remote = {};
 
 // query to get particular user details
 remote.findUser = function findUser(query, callback) {
-    mongodb.db.collection('players').find(query).toArray((err, result) => {
+    mongodb.db.collection('players').findOne(query, (err, result) => {
         callback(err, result);
     });
 };

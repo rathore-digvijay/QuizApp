@@ -11,7 +11,6 @@ const express = require('express');
 
 // const bodyParser = require('body-parser');
 const normalRouter = require('./routes/index.js');
-const authRouter = require('./routes/auth.js');
 const db = require('./database/mongoConnection.js');
 
 const app = express();
@@ -27,7 +26,6 @@ app.use(express.json());
 // app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', normalRouter);
-app.use('/auth', authRouter);
 
 // used to allow http request on server(eg.for sending mail) if this is set to 1 then
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
