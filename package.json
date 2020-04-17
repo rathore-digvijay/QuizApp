@@ -1,0 +1,35 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "A basic quiz app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ./bin/www",
+    "devStart": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digvijay-r/QuizApp.git"
+  },
+  "keywords": [
+    "QuizApp"
+  ],
+  "author": "Digvijay Rathore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digvijay-r/QuizApp/issues"
+  },
+  "homepage": "https://github.com/digvijay-r/QuizApp#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.5.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
