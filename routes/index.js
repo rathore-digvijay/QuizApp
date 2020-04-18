@@ -5,7 +5,7 @@
  * Author: Digvijay Rathore (rathore.digvijay10@gmail.com)
  */
 const express = require('express');
-const playerProfileHandler = require('../backendHandlers/playerProfileHandler.js');
+const playerProfileHandler = require('./backendHandlers/playerProfileHandler.js');
 
 const router = express.Router();
 
@@ -22,10 +22,12 @@ router.post('/login', (req, res) => {
     playerProfileHandler.loginPlayer(req, res);
 });
 
-router.post('/auth/token', (req, res) => {
+// TODO
+router.post('/token', (req, res) => {
     authHandler.getRefreshToken(req, res);
 });
 
+// TODO
 router.delete('/logout', (req, res) => {
     authHandler.logout(req, res);
 });

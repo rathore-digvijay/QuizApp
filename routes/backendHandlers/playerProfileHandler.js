@@ -5,7 +5,7 @@
  * Author: Digvijay Rathore (rathore.digvijay10@gmail.com)
  */
 
-const dbQuery = require('../database/dbQuery.js');
+const dbQuery = require('../../database/dbQuery.js');
 const authHandler = require('./authHandler.js');
 
 function getPlayerDetails(data) {
