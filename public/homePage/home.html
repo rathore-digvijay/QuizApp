@@ -10,47 +10,64 @@ Author: digvijay (rathore.digvijay10@gmail.com)
 <head>
     <title>Home Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="./home.js"></script>
 </head>
 
-<body style="background-color:#36c3ed">
+<body style="background-color: #7f3ed4">
     <div class="container">
         <div class="row ">
             <div class="col-lg-2 "></div>
             <div class="col-lg-8 " style="padding: 50px; text-align: center; ">
-                <h3 style="text-align: center "><b>Welcome To Home Page...</b></h3>
+                <h3 style="text-align: center "><b>Welcome To Game</b></h3>
             </div>
             <div class="col-lg-2" style="padding: 20px; text-align: center; ">
                 <p>
-                    <button onclick="return log_out()">Log Out</button>
+                    <!-- <button onclick="return log_out()">Log Out</button> -->
+                    <button type="button" class="btn btn-danger" onclick="return logOut()">LogOut</button>
                 </p>
                 <p id="back"></p>
             </div>
         </div>
-        <div class="row ">
-            <div class="col "></div>
-            <div class="col " style="background-color: #a8afb2 ; padding: 20px; ">
-                <b>Insert students details </b>
-                <br>
-                <button onclick="return insert_page()">To Insert</button>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4" style="background-color: #1daeec ; padding: 20px; ">
+                <center>
+                    <b> Profile </b>
+                    <br>
+                    <button type="button" class="btn btn-primary" onClick="playerProfile()">Profile</button>
+                </center>
             </div>
-            <div class="col " style="background-color:#a8afb2; padding: 20px ">
-                <b>Show List of Students </b>
-                <br>
-                <button onclick="return show_data()">To Show</button>
+            <div class="col-md-1"></div>
+            <div class="col-md-4" style="background-color:#19c235; padding: 20px ">
+                <center>
+                    <b> Play MCQ </b>
+                    <br>
+                    <button type="button" class="btn btn-primary" onClick="playMcq()">Play</button>
+                </center>
             </div>
-            <div class="col " style="background-color:#a8afb2; padding: 20px ">
-                <b>Search Single Students</b>
-                <br>
-                <button onclick="return search()">To Search</button>
+            <div class="col-md-1"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4" style="background-color:#d39a1e; padding: 20px; ">
+                <center>
+                    <b> Play True/False </b>
+                    <br>
+                    <button type="button" class="btn btn-primary" onClick="playTF()">Play</button>
+                </center>
             </div>
-            <div class="col " style="background-color:#a8afb2; padding: 20px ">
-                <b>Update students details </b>
-                <br>
-                <button onclick="return update_data()">To Update</button>
+            <div class="col-md-1"></div>
+            <div class="col-md-4" style="background-color:#c71d50; padding: 20px ">
+                <center>
+                    <b>Check Stats </b>
+                    <br>
+                    <button type="button" class="btn btn-primary" onClick="checkStats()">Stats</button>
+                </center>
             </div>
-            <div class="col "></div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 </body>

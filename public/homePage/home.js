@@ -12,24 +12,24 @@ function checkAnyOneLogin(params) {
 }
 checkAnyOneLogin();
 
-function insert_page() {
-    window.location.href = 'insert_student_details.html';
+function playerProfile() {
+    swal('Coming Soon!', 'come back later');
+    // window.location.href = 'insert_student_details.html';
 }
 
-function search() {
-    window.location.href = 'search.html';
+function playMcq() {
+    return window.location.assign('../mcqGame/game.html');
 }
 
-function show_data() {
-    window.location.href = 'show_students_list.html';
-    // window.location.href = "test.html";
+function playTF() {
+    swal('Coming Soon!', 'come back later');
+    // window.location.href = 'show_students_list.html';
 }
 
-function update_data() {
-    window.location.href = 'update.html';
-    // window.location.href = "test1.html";
+function checkStats() {
+    swal('Coming Soon!', 'come back later');
 }
 
-function log_out() {
+function logOut() {
     window.location.href = 'login.html';
 }
