@@ -1,0 +1,58 @@
+<!--
+File: home.html
+Project: quizapp
+File Created: Sunday, 19th April 2020 7:31:11 pm
+Author: digvijay (rathore.digvijay10@gmail.com)
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="./home.js"></script>
+</head>
+
+<body style="background-color:#36c3ed">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-2 "></div>
+            <div class="col-lg-8 " style="padding: 50px; text-align: center; ">
+                <h3 style="text-align: center "><b>Welcome To Home Page...</b></h3>
+            </div>
+            <div class="col-lg-2" style="padding: 20px; text-align: center; ">
+                <p>
+                    <button onclick="return log_out()">Log Out</button>
+                </p>
+                <p id="back"></p>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col "></div>
+            <div class="col " style="background-color: #a8afb2 ; padding: 20px; ">
+                <b>Insert students details </b>
+                <br>
+                <button onclick="return insert_page()">To Insert</button>
+            </div>
+            <div class="col " style="background-color:#a8afb2; padding: 20px ">
+                <b>Show List of Students </b>
+                <br>
+                <button onclick="return show_data()">To Show</button>
+            </div>
+            <div class="col " style="background-color:#a8afb2; padding: 20px ">
+                <b>Search Single Students</b>
+                <br>
+                <button onclick="return search()">To Search</button>
+            </div>
+            <div class="col " style="background-color:#a8afb2; padding: 20px ">
+                <b>Update students details </b>
+                <br>
+                <button onclick="return update_data()">To Update</button>
+            </div>
+            <div class="col "></div>
+        </div>
+    </div>
+</body>
+
+</html>
