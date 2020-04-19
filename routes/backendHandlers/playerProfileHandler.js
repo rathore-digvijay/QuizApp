@@ -35,6 +35,8 @@ function createPlayer(data) {
 }
 
 async function registerUser(req, res) {
+    console.log('inside register user');
+    console.log(JSON.stringify(req.body));
     try {
         const playerDetails = await getPlayerDetails(req.body);
         if (playerDetails) {

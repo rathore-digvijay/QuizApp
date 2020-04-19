@@ -5,11 +5,11 @@
  * Author: Digvijay Rathore (rathore.digvijay10@gmail.com)
  */
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 // const cookieParser = require('cookie-parser');
-// const cors = require('cors');
+const cors = require('cors');
 
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const normalRouter = require('./routes/index.js');
 const db = require('./database/mongoConnection.js');
 
@@ -19,16 +19,16 @@ app.use(express.json());
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
-// app.use(cors());
+app.use(cors());
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', normalRouter);
 
 // used to allow http request on server(eg.for sending mail) if this is set to 1 then
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 process.title = 'QuizApp';
 
 // Initialize database connections etc.
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use((err, req, res, next) => {
+    app.use((err, req, res) => {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -60,7 +60,7 @@ if (app.get('env') === 'development') {
 }
 // production error handler
 // no stacktraces leaked to user
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,

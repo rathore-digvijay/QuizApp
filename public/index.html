@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript">
+        function getData() {
+            var playerData = {
+                userName: $("#userName").val(),
+                age: $("#age").val(),
+                // address: $("#address").val(),
+                // user_id: $("#user_id").val(),
+                password: $("#password").val()
+            }
+            if(!playerData.userName || !playerData.age || !playerData.password){
+                swal("Oops!", "Fill all the fields!", "warning");
+                return;
+            }
+            if(playerData.age < 3){
+                swal("Oops!", "You must be old enough to play!", "warning");
+                return;
+            }
+            const postData = $.post('/register', playerData);
+            console.log("############", playerData);
+            postData.done(function(data){
+                if(!data.success){
+                    swal("Oops!", data.errorInfo, "error");
+                    return;
+                }
+                swal("Yayy!", "Registered Successfully!", "success");
+                text_clear();
+                window.location.href = "login.html";
+            });
+        }
+
+        function text_clear() {
+            document.getElementById("userName").value = "";
+            document.getElementById("age").value = "";
+            // document.getElementById("address").value = "";
+            // document.getElementById("user_id").value = "";
+            document.getElementById("password").value = "";
+        }
+    </script>
+</head>
+
+<body style="background-color: #7f3ed4 ">
+    <div class="container">
+        <div class="row" >
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="jumbotron" style="margin-top:20px;background-color: #5724e4;" >
+                    <h3 >Quiz App</h3>
+                    <div id="notFilled">
+                        <p></p>
+                    </div>
+                    <div class="form-group">
+                        Username :
+                        <input class="form-control" id="userName" type="text" name="userName" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        Age :
+                        <input class="form-control" id="age" type="number" name="age" min="1"
+                            placeholder="Enter your age">
+                    </div>
+                    <!-- <div class="form-group">
+                        Address :
+                        <input class="form-control" id="address" type="text" name="address"
+                            placeholder="Enter your address">
+                    </div> -->
+                    <!-- <div class="form-group">
+                        User_id :
+                        <input class="form-control" id="user_id" type="text" name="user_id"
+                            placeholder="Enter your user_id">
+                    </div> -->
+                    <div class="form-group">
+                        Password :
+                        <input class="form-control" id="password" type="password" name="password"
+                            placeholder="Enter password">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="return getData()">Register</button>
+                    <button type="button" class="btn btn-danger" onclick="text_clear()">Reset</button>
+                    <br>
+                    <br>
+                    <label><b>Already a Player</b> &nbsp; <a href="/login.html">LOGIN</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
