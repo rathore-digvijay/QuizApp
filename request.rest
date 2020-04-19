@@ -15,3 +15,7 @@ content-type: application/json
     "userName" : "raavan",
     "password" : "123456"
 }
+
+###
+
+GET https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple HTTP/1.1
